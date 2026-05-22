@@ -1,0 +1,71 @@
+# Machine-readable severity matrix.
+# Agents emit findings tagged with one of these severities.
+# Tools (CI, dashboards) consume this YAML to parse output.
+
+version: 1
+schema: https://github.com/theitm/ai-security-audit-rules
+
+severities:
+  - id: CRITICAL
+    score: 5
+    sla_days: 1
+    examples:
+      - Unauthenticated remote code execution
+      - Mass data leak (PII, payments, tokens)
+      - Production secret exposure in repository or logs
+      - Authentication bypass on any role
+      - Persistent admin compromise via single request
+
+  - id: HIGH
+    score: 4
+    sla_days: 7
+    examples:
+      - Privilege escalation between roles
+      - Tenant breakout in multi-tenant systems
+      - SQL injection
+      - Unsafe file upload leading to RCE
+      - Sensitive data returned to wrong user (IDOR on PII)
+      - JWT signature bypass or algorithm confusion
+
+  - id: MEDIUM
+    score: 3
+    sla_days: 30
+    examples:
+      - Missing rate limit on auth or expensive endpoints
+      - Weak session settings (no rotation, long lifetime)
+      - Missing audit log for admin actions
+      - Risky dependency (known CVE, no fix yet)
+      - Partial SSRF (limited target set)
+      - Predictable password reset tokens
+
+  - id: LOW
+    score: 2
+    sla_days: 90
+    examples:
+      - Missing security header (CSP, HSTS, X-Frame-Options)
+      - Verbose error message
+      - Missing input length cap
+      - Documentation gap on security control
+
+  - id: INFO
+    score: 1
+    sla_days: null
+    examples:
+      - Hardening recommendation
+      - Refactor suggestion for clarity
+      - Documentation improvement
+
+categories:
+  - id: A01_Broken_Access_Control
+  - id: A02_Cryptographic_Failures
+  - id: A03_Injection
+  - id: A04_Insecure_Design
+  - id: A05_Security_Misconfiguration
+  - id: A06_Vulnerable_Components
+  - id: A07_Auth_Failures
+  - id: A08_Integrity_Failures
+  - id: A09_Logging_Monitoring_Failures
+  - id: A10_SSRF
+  - id: Secrets_Exposure
+  - id: Supply_Chain
+  - id: Hardening

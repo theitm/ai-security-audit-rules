@@ -1,20 +1,22 @@
 # Claude Code Integration
 
-## Usage
+## Quick start
 
-1. Copy `prompts/agent-system-prompt.md` into the agent instruction.
-2. Ask Claude Code to read `SECURITY_REVIEW_PROTOCOL.md` and relevant rules.
-3. Run a read-only audit first.
-4. If patching is desired, ask for small commits by severity.
+1. Copy [`drop-in/CLAUDE.md`](../drop-in/CLAUDE.md) to your project root as `CLAUDE.md`.
+2. Open the project in Claude Code. The agent reads `CLAUDE.md` automatically.
+3. Ask: `Audit this codebase using CLAUDE.md. Output findings in JSON per prompts/json-output-template.md.`
 
-## Suggested prompt
+## Example session
 
-```text
-Read SECURITY_REVIEW_PROTOCOL.md and all rules under rules/core. Then inspect this repository for security issues. Do not modify files yet. Produce a report using prompts/security-review-report-template.md.
+```
+You: Review src/routes/ for security issues following the CLAUDE.md rules.
+Claude: [reads files, applies OWASP checks, returns findings with severity]
+You: Fix the HIGH and CRITICAL issues. Add tests.
+Claude: [generates patches with ownership checks, parameterized queries, etc.]
 ```
 
-## Vietnamese prompt
+## Tips
 
-```text
-Đọc SECURITY_REVIEW_PROTOCOL.md và toàn bộ rules/core. Sau đó kiểm tra repo này để tìm vấn đề bảo mật. Chưa sửa file. Xuất report theo prompts/security-review-report-template.md.
-```
+- Pin Claude Code to read-only mode for the first audit pass.
+- For large repos, scope the audit: `Audit only src/api/ this round.`
+- Request the JSON output format when feeding results to a dashboard.
