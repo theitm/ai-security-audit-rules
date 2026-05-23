@@ -32,7 +32,7 @@ Pick your agent, drop the file in your project root, done.
 
 Then ask your agent:
 
-```
+```text
 Review this codebase using the security audit rules. Output a report following the severity matrix.
 ```
 
@@ -82,7 +82,7 @@ cd ai-security-audit-rules/examples/vulnerable-app
 
 ## 📚 Repository map
 
-```
+```text
 ai-security-audit-rules/
 ├── drop-in/                    # Copy these into your project
 │   ├── CLAUDE.md

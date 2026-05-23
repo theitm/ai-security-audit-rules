@@ -63,7 +63,7 @@ When generating or modifying code, verify:
 
 When you find an issue, report it like this:
 
-```
+```text
 [SEVERITY] Title
 File: path/to/file.ext:LINE
 Category: A0X_Name (or Secrets/Auth/CI/Dependency)

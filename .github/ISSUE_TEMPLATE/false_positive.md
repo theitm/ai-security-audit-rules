@@ -9,7 +9,7 @@ labels: false-positive
 
 ## Code that was flagged
 
-```
+```text
 <paste minimal snippet>
 ```
 

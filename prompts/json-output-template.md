@@ -52,7 +52,7 @@ Use this when a tool needs to parse the agent output (CI, dashboards, ticketing)
 
 ## Prompt to request JSON output
 
-```
+```text
 Review this repository using the security audit rules in drop-in/CLAUDE.md.
 Output your findings as a single valid JSON object matching the schema in
 prompts/json-output-template.md. Do not include any text outside the JSON.

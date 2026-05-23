@@ -8,7 +8,7 @@
 
 ## Example session
 
-```
+```text
 You: Review src/routes/ for security issues following the CLAUDE.md rules.
 Claude: [reads files, applies OWASP checks, returns findings with severity]
 You: Fix the HIGH and CRITICAL issues. Add tests.
