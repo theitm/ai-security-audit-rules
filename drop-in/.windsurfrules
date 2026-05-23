@@ -9,6 +9,10 @@ CORE PRINCIPLES
 - Defense in depth. One failed control must not equal compromise.
 - Auditability. Log security-relevant events without leaking secrets.
 - Assume breach. Design for rotation, revocation, recovery.
+- Think before coding. Explicitly state security assumptions and auth context before changing code.
+- Simplicity first. Write the minimum code needed to fix the bug; complex security code is easily bypassed.
+- Surgical changes. Modify only code strictly necessary for the security patch; no stylistic or unrelated refactoring.
+- Goal-driven verification. Define and verify both failing and passing tests for the vulnerability.
 
 MANDATORY CHECKS WHEN WRITING CODE
 - Auth middleware on every protected route/handler.

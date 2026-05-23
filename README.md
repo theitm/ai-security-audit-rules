@@ -96,6 +96,7 @@ ai-security-audit-rules/
 │   │   ├── 00-principles.md
 │   │   ├── 01-owasp-top-10.md
 │   │   ├── 02-secrets-and-config.md
+│   │   ├── 03-agent-behavior.md
 │   │   └── severity.yaml       # Machine-readable severity matrix
 │   ├── languages/              # Per-language deep dives
 │   │   ├── javascript-typescript.md
