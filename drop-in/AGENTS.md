@@ -35,6 +35,9 @@ When generating or modifying code, verify:
 - [ ] LLM inputs isolated from system instructions (no prompt injection)
 - [ ] PII/sensitive data redacted before sending to external LLM APIs
 - [ ] LLM output validated/sanitized before rendering or executing
+- [ ] Server signatures (e.g. `X-Powered-By`) hidden and directory listing disabled
+- [ ] Explicit size limits set on incoming request payloads (prevent body parsing crash)
+- [ ] SPF, DKIM, and DMARC rules configured for domains sending email
 
 ## OWASP Top 10 quick reference
 
