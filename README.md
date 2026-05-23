@@ -42,8 +42,8 @@ Review this codebase using the security audit rules. Output a report following t
 
 - **Server-side enforcement first** — agent stops trusting UI checks
 - **OWASP Top 10 coverage** with real evidence patterns
-- **Per-language rules** — JS/TS, Python, Go (more coming)
-- **Domain rules** — web/API, cloud, container, CI/CD
+- **Per-language rules** — JS/TS, Python, Go
+- **Domain rules** — Web/API, Cloud/CI-CD, LLM Apps, Offensive Mitigation
 - **Structured output** — JSON severity matrix tools can parse
 - **Defensive only** — no exploit walkthroughs, no offensive content
 - **Bilingual** — English first, Vietnamese explanations
@@ -98,7 +98,14 @@ ai-security-audit-rules/
 │   │   ├── 02-secrets-and-config.md
 │   │   └── severity.yaml       # Machine-readable severity matrix
 │   ├── languages/              # Per-language deep dives
-│   └── domains/                # web/api/cloud/container/ci
+│   │   ├── javascript-typescript.md
+│   │   ├── python.md
+│   │   └── go.md
+│   └── domains/                # Topic-specific security rules
+│       ├── web-api.md
+│       ├── cloud-container-ci.md
+│       ├── llm-application.md
+│       └── offensive-mitigation.md
 ├── prompts/                    # System prompts + report templates
 ├── examples/
 │   ├── vulnerable-app/         # Demo target with planted bugs
