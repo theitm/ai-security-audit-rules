@@ -25,6 +25,9 @@ MANDATORY CHECKS WHEN WRITING CODE
 - Block user URLs from localhost, private CIDR, cloud metadata IPs.
 - Generic error messages in production. No stack traces.
 - CI workflows use minimal permissions and pin third-party actions by SHA.
+- LLM inputs isolated from system instructions (no prompt injection).
+- PII/sensitive data redacted before sending to external LLM APIs.
+- LLM output validated/sanitized before rendering or executing.
 
 OWASP TOP 10 WATCH LIST
 A01 Access Control: missing auth, IDOR, tenant leaks, frontend-only role checks.

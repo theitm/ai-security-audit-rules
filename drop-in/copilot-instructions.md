@@ -32,6 +32,9 @@ When generating or modifying code, verify:
 - [ ] User-supplied URLs blocked from localhost/private CIDR/cloud metadata
 - [ ] Errors return generic messages in prod (no stack traces)
 - [ ] CI workflows have minimal `permissions:` and pin actions by SHA
+- [ ] LLM inputs isolated from system instructions (no prompt injection)
+- [ ] PII/sensitive data redacted before sending to external LLM APIs
+- [ ] LLM output validated/sanitized before rendering or executing
 
 ## OWASP Top 10 quick reference
 
